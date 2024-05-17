@@ -1,5 +1,4 @@
 module URI
-
   class Data < Generic
 
     COMPONENT = [:scheme, :opaque].freeze
@@ -61,6 +60,10 @@ module URI
     end
   end
 
-  @@schemes['DATA'] = Data
+  def self.schemes
+    @@schemes ||= {}
+  end
+  
+  schemes['DATA'] = Data
 
 end
